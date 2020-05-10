@@ -61,19 +61,19 @@ function RenderDish({dish}) {
     }
 }
 
- const DishDetails= (probs)=>{
+ const DishDetails= (props)=>{
 
     console.log("render got invoked");
     
-    if (probs.dish == null) {
+    if (props.dish == null) {
         return (
             <div>
 
             </div>);
     }
     else {
-        const dishList = <RenderDish dish = {probs.dish}/>
-        const dishComments = <RenderComments comments= {probs.dish.comments}/>
+        const dishList = <RenderDish dish = {props.dish}/>
+        const dishComments = <RenderComments comments= {props.dish.comments}/>
         return (
 
             <div className="container">
@@ -98,111 +98,3 @@ function RenderDish({dish}) {
 
 
 export default DishDetails;
-
-
-
-    // onDishSelect(dish) {
-    //     this.setState({ selectedDish: dish });
-
-    // }
-    // renderDish(dish) {
-        // if (dish != null) {
-        //     return (
-                // <div className="container">
-                //     <div className="row">
-
-                //         <div className="col-12 col-md-5 m-1">
-                //             <Card>
-                //                 <CardImg width="100%" src={dish.image} alt={dish.name} />
-                //                 <CardBody>
-                //                     < CardTitle >{dish.name}</ CardTitle>
-                //                     <CardText>{dish.description}</CardText>
-                //                 </CardBody>
-
-                //             </Card>
-                //         </div>
-                    //     <div className="col-12 col-md-5">
-                    //         <Card>
-                    //             {/* map , filter, sort , foreach . for-of , for-in , every, some ,  */}
-                    //             <CardBody>
-                    //                 <CardTitle><h4><strong>Comments</strong></h4></CardTitle>
-                    //                 {
-                    //                     dish.comments.map((review, index) => (
-                    //                         <div key={index}>
-                    //                             <CardText>{review.comment}</CardText>
-                    //                             <CardText>
-                    //                                 {`--${review.author} ,${new Date(review.date).toDateString()}`}</CardText>
-                    //                         </div>
-
-                    //                     ))
-                    //                 }
-
-                    //             </CardBody>
-
-                    //         </Card>
-                    //     </div>
-
-                    // </div>
-        //         </div>
-        //     );
-
-        // }
-
-        // else {
-        //     return (<div>
-
-        //     </div>);
-        // }
-
-    // }
-
-    // render() {
-    //     return (
-    //         <div className="row">
-                // {this.renderDish(this.state.selectedDish)
-                // }
-    //         </div>
-
-    //     );
-    // }
-    // render() {
-    //     const menu = this.props.dishes.map((dish) => {
-    //         return (
-    //             <div key={dish.id} className="col-12 col-md-5 m-1">
-    //                 <Card onClick={() => this.onDishSelect(dish)}>
-    //                     <CardImg width="100%" src={dish.image} alt={dish.name} />
-
-    //                     <CardImgOverlay>
-    //                         < CardTitle >{dish.name}</ CardTitle>
-
-    //                     </CardImgOverlay>
-    //                 </Card>
-    //             </div>
-    //         );
-    //     });
-
-    //     return (
-    //         <div className="container">
-    //             <div className="row">
-
-    //                 {menu}
-
-
-    //             </div>
-    //             <div className="row">
-                    // {this.renderDish(this.state.selectedDish)
-                    // }
-    //             </div>
-
-    //         </div>
-
-
-    //     );
-    // }
-
-
-
-
-// }
-
-// export default DishDetail

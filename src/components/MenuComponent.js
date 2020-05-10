@@ -13,14 +13,14 @@ function RenderMenuItem({ dish, onClick }) {
     );
 }
 
-const Menu = (probs) => {
+const Menu = (props) => {
 
 
 
-    const menu = probs.dishes.map((dish) => {
+    const menu = props.dishes.map((dish) => {
         return (
             <div className="col-12 col-md-5 m-1">
-                <RenderMenuItem dish= {dish} onClick={probs.onClick} />
+                <RenderMenuItem dish= {dish} onClick={props.onClick} />
 
             </div>
         );

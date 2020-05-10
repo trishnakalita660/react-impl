@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home(probs){
+function Home(props){
     return(
         <div className="container">
             <h4>Home</h4>
