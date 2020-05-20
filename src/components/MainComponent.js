@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-
 import Menu from './MenuComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
@@ -9,7 +8,7 @@ import Contact from './ContactComponent';
 import {connect} from 'react-redux';
 import {Switch, Route,Redirect, withRouter} from 'react-router-dom';
 import DishDetails from './DishdetailComponent';
-
+import { addComment } from '../redux/ActionCreators'
 
 const mapStateToProps =state =>{
   return{
@@ -19,6 +18,9 @@ const mapStateToProps =state =>{
     leaders : state.leaders
   }
 }
+const mapDispatchToProps= (dispatch)=>({
+addComment : (dishId,rating, author,comment)=>dispatch(addComment(dishId,rating, author,comment))
+});
 
 class Main extends Component{
 
@@ -45,6 +47,7 @@ class Main extends Component{
       return(
         <DishDetails dish = {this.props.dishes.filter((dish)=>dish.id === parseInt(match.params.dishId,10))[0]}
          comments ={this.props.comments.filter((comment)=>comment.dishId === parseInt(match.params.dishId,10))}
+         addComment={this.props.addComment}
         />
       );
 
@@ -71,4 +74,4 @@ class Main extends Component{
 }
 
 
-export default withRouter(connect(mapStateToProps)(Main)); // connecting component with react router
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Main)); // connecting component with react router
