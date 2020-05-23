@@ -69,7 +69,7 @@ class CommentForm extends Component {
                                         />
                                         <Errors
                                         className="text-danger"
-                                        model=".yourName"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                         required: 'Required!',
@@ -189,7 +189,7 @@ const DishDetails = (props) => {
         return(
             <div className="container">
                 <div className="row">
-                    <h4>props.errmess</h4>
+                    <h4>{props.errmess}</h4>
                 </div>
             </div>
         );
