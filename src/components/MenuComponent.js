@@ -69,7 +69,7 @@ else if(props.dishes.errmess){
 }
 
 
-export default Menu
+export default Menu;
 
 
 

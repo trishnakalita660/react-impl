@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Row, Button, Form, FormGroup, Label, Input, Col, FormFeedback } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors,actions } from 'react-redux-form';
+import { dishesFailed } from '../redux/ActionCreators';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -45,8 +46,7 @@ class Contact extends Component {
     // }
 
     handleSubmit(values) {
-        console.log("Submit is clicked");
-        alert("submitted");
+       this.props.postFeedback(values);
         this.props.resetFeedbackForm();
         // event.preventDefault();
 
