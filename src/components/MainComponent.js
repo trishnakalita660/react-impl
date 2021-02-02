@@ -13,7 +13,7 @@ import {actions} from 'react-redux-form';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 
 
-const mapStateToProps =state =>{
+const mapStateToProps = state =>{
   return{
     dishes : state.dishes,
     comments : state.comments,
@@ -59,7 +59,7 @@ class Main extends Component{
               promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
               promosLoading={this.props.promotions.isLoading}
               promosErrMess={this.props.promotions.errmess}
-              leaders={this.props.leaders.leaders.filter((leaders) => leaders.featured)[0]}
+              leaders={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
               leadersLoading={this.props.leaders.isLoading}
               leadersErrMess={this.props.leaders.errMess}
 

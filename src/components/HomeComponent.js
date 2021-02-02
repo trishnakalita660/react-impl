@@ -17,7 +17,7 @@ function RenderCard({ item, isLoading, errmess }) {
         <FadeTransform in transformProps={{
             exitTransform: 'scale(0.5) translateY(-50%)'
         }}>
-            <Card>
+            <Card key = {item}>
                 <CardImg src={baseUrl + item.image} alt={item.name} />
                 <CardBody>
                     <CardTitle>{item.name}</CardTitle>
@@ -43,11 +43,12 @@ function Home(props) {
                         isLoading={props.promosLoading}
                         errmess={props.promosErrMess} />
                 </div>
+                {/*
                 <div className="col-12 col-md m-1">
                     <RenderCard item={props.leaders}
                         isLoading={props.leadersLoading}
                         errmess={props.leadersErrMess} />
-                </div>
+                </div> */}
             </div>
         </div>
     );
